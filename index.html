@@ -67,10 +67,70 @@
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="cta-btn d-none d-sm-block" href="#buy-tickets">Achat de Tickets</a>
+      <!-- On pointe vers l’ID de la modale -->
+    <a class="cta-btn d-none d-sm-block" href="#ticketModal">Achat de Tickets</a>
     </div>
   </header>
 
+  <!-- === Modale CSS-only via :target === -->
+<div id="ticketModal" class="ticket-modal">
+  <div class="ticket-modal-content">
+    <!-- Lien de fermeture : ramène en haut de page -->
+    <a href="#" class="ticket-modal-close">&times;</a>
+    <!-- Votre affiche -->
+    <img src="assets/img/affiche-dopelym.png" alt="Affiche Dopelym">
+    <!-- Bouton d'achat -->
+    <p style="margin-top:1rem;">
+      <a href="https://www.eventbrite.ca/e/concert-dopelym-a-montreal-tickets-1514390174779?aff=oddtdtcreator"
+         target="_blank"
+         class="cta-btn">
+        Acheter les tickets
+      </a>
+    </p>
+  </div>
+</div>
+
+<!-- === Styles pour la modale === -->
+<style>
+  .ticket-modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    z-index: 10000;
+  }
+  /* Quand on ouvre via #ticketModal */
+  .ticket-modal:target {
+    display: flex;
+  }
+  .ticket-modal-content {
+    position: relative;
+    background: #fff;
+    border-radius: 4px;
+    max-width: 600px;
+    width: 100%;
+    padding: 1.5rem;
+    text-align: center;
+  }
+  .ticket-modal-close {
+    position: absolute;
+    top: 0.5rem; right: 1rem;
+    font-size: 2rem;
+    text-decoration: none;
+    color: #333;
+  }
+  .ticket-modal-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+</style>
+  
   <main class="main">
 
     <!-- Hero Section -->
